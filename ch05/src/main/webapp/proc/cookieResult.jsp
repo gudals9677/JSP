@@ -9,11 +9,10 @@
 		<h3>쿠키확인</h3>
 		
 		<%
-			Cookie[] cookies= request.getCookies();
+			Cookie[] cookies = request.getCookies();
 			
+		for(Cookie cookie : cookies){
 		
-		for(Cookie cookie: cookies){
-	
 		%>
 		<p>
 			쿠키명 : <%= cookie.getName() %><br>

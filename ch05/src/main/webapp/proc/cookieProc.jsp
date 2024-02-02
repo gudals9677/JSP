@@ -14,12 +14,13 @@
 			
 			// 쿠키생성
 			Cookie c1 = new Cookie("cid",uid);
-			c1.setMaxAge(60 * 1); //유통기한 60이 1분
+			c1.setMaxAge(60 * 1); // 유통기한 60이 1분
 			Cookie c2 = new Cookie("cpw",pass);
-			c2.setMaxAge(60 * 3);
+			c1.setMaxAge(60 * 3); 
 			
 			response.addCookie(c1);
 			response.addCookie(c2);
+			
 		%>
 		
 		<a href="./cookieResult.jsp

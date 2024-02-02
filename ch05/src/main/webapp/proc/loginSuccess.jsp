@@ -6,7 +6,7 @@
 
 	UserDTO user = (UserDTO) session.getAttribute("sessUser");
 	
-	if(user == null){
+	if(user!=null){
 		response.sendRedirect("../2.Session.jsp?login=mustlog");
 		return; // 리턴안하면 user.getName에서 null에러 발생하므로 리턴해줌
 	}

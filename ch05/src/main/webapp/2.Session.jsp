@@ -2,28 +2,28 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	// 자동 로그인 여부에 따라 로그인 처리
-	Cookie[] cookies = request.getCookies();
-
-	if(cookies !=null){
-	for(Cookie cookie : cookies){
-		
-		if(cookie.getName().equals("cid")){
+		Cookie[] cookies = request.getCookies();
+	
+		if(cookies != null){
 			
-			String uid = cookie.getValue();
-			
+			for(Cookie cookie : cookies){
+				
+				if(cookie.getName().equals("cid")){
+					
+					String uid = cookie.getValue();
 			// 데이터베이스 처리
 			
 			// 사용자 생성
 			UserDTO user = new UserDTO();
 			user.setUid(uid);
 			user.setName("홍길동");
-			
 			// 세션 기록
 			session.setAttribute("sessUser", user);
 			
 			// 로그인 성공 페이지 이동
 			response.sendRedirect("./proc/loginSuccess.jsp");
 			return;
+			
 		}
 	}
 	}
