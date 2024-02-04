@@ -7,7 +7,6 @@ public class User1DTO {
 	private String birth;
 	private String hp;
 	private int age;
-	
 	public String getUid() {
 		return uid;
 	}
@@ -40,8 +39,9 @@ public class User1DTO {
 	}
 	@Override
 	public String toString() {
-		return "User3DTO [uid=" + uid + ", name=" + name + ", birth=" + birth + ", hp=" + hp + ", age=" + age + "]";
+		return "User1DTO [uid=" + uid + ", name=" + name + ", birth=" + birth + ", hp=" + hp + ", age=" + age + "]";
 	}
+	
 	
 	
 }

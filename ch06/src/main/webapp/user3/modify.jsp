@@ -30,7 +30,7 @@
 			dto.setHp(rs.getString(4));
 			dto.setAddr(rs.getString(5));
 		}
-		
+		rs.close();
 		psmt.close();
 		conn.close();
 	}catch(Exception e){
@@ -74,11 +74,10 @@
 				</tr>
 				<tr>
 					<td colspan="2" align="right">
-					<input type="submit" value="수정하기">
-					</td>
+					<td><input type="submit" value="수정하기"></td>
+					
 				</tr>
 			</table>
-		
 		</form>
 	</body>
 </html>
