@@ -13,8 +13,10 @@ public class UserDTO {
 	private String addr1;
 	private String addr2;
 	private String regip;
+	private String sms;
 	private String rdate;
 	private String leaveDate;
+	
 	public String getUid() {
 		return uid;
 	}
@@ -93,6 +95,13 @@ public class UserDTO {
 	public void setLeaveDate(String leaveDate) {
 		this.leaveDate = leaveDate;
 	}
+	public String getSms() {
+		return sms;
+	}
+	public void setSms(String sms) {
+		this.sms = sms;
+	}
+	
 	@Override
 	public String toString() {
 		return "UserDTO [uid=" + uid + ", pass=" + pass + ", name=" + name + ", nick=" + nick + ", email=" + email

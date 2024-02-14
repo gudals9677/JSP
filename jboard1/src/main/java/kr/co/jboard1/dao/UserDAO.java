@@ -38,6 +38,7 @@ public class UserDAO extends DBHelper {
 			psmt.setString(5, user.getEmail());
 			psmt.setString(6, user.getHp());
 			psmt.setString(7, user.getRegip());
+			psmt.setString(8, user.getSms());
 			
 			psmt.executeUpdate();
 			
@@ -124,6 +125,7 @@ public class UserDAO extends DBHelper {
 				terms = new TermsDTO();
 				terms.setTerms(rs.getString(1));
 				terms.setPrivacy(rs.getString(2));
+				terms.setSms(rs.getString(3));
 			}
 			
 			closeAll();

@@ -3,6 +3,7 @@
 	request.setCharacterEncoding("utf-8");
 	String gudals1 = request.getParameter("gudals1");
 	String gudals2 = request.getParameter("gudals2");
+	String sms = request.getParameter("sms");
 	
 	// 데이터베이스 처리
 	
@@ -12,18 +13,25 @@
 		
 	
 	if(gudals1.equals("on") && gudals2.equals("on")){
+		
 		session.setAttribute("agree", true);
+		
+		if(sms != null){
+			session.setAttribute("sms", "Y");
+		}else{
+			session.setAttribute("sms", "N");
+		}
+		
 		response.sendRedirect("/jboard1/user/register.jsp");
+		
 	}else{
 		response.sendRedirect("/jboard1/user/terms.jsp?code=300");
 	}
+	
 	}catch(Exception e){
 		
 		e.printStackTrace();
 		
 		response.sendRedirect("/jboard1/user/terms.jsp?code=300");
 	}
-
-
-
 %>
