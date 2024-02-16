@@ -10,7 +10,6 @@
 			내용 : JSP AJAX 실습하기
 		-->
 		<script>
-			
 			window.onload = function(){
 				// 사용자 목록
 				const table = document.getElementsByTagName('table')[0];
@@ -67,12 +66,8 @@
 									.catch((err)=>{
 										console.log(err);
 									});
-								
-								
-								
+
 							}
-							
-							
 							td6.appendChild(a1);
 							td6.appendChild(a2);							
 							
@@ -94,7 +89,6 @@
 	</head>
 	<body>
 		<h3>user1 목록</h3>
-		
 		<table border="1">
 			<tr>
 				<th>아이디</th>
@@ -104,7 +98,6 @@
 				<th>나이</th>				
 				<th>관리</th>
 			</tr>
-		</table>
-		
+		</table>	
 	</body>
 </html>
