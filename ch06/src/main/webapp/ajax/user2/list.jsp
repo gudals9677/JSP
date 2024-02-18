@@ -35,9 +35,35 @@
 		 							td4.innerText = user.addr;
 		 							a1.href = './modify.jsp?uid='+user.uid;
 		 							a1.innerText = '수정';
-		 							a2.href = '#';
+		 							a2.href = './delete.jsp?uid='+user.uid;
 		 							a2.innerText = '삭제';
-		 							
+		 							a2.onclick = function(e){
+		 								e.preventDefault();
+		 								
+		 								const parent = e.target.closest('tr');
+		 								console.log(parent);
+		 								const url = this.href;
+		 								const params = url.split('?')[1];
+		 								const value = params.split('=')[1];
+		 								console.log(value);
+		 								
+		 								fetch('./proc/deleteUser2.jsp?uid='+value)
+		 										.then(response=>response.json())
+		 										.then((data)=>{
+		 											console.log(data);
+		 											
+		 											if(data.result > 0){
+		 												
+		 												alert('삭제 완료');
+		 												
+		 												parent.remove();
+		 											}
+		 										})
+		 										.catch((err)=>{
+		 											console.log(err);
+		 										});
+		 								
+		 							}
 		 							
 		 							td5.appendChild(a1);
 		 							td5.appendChild(a2);
