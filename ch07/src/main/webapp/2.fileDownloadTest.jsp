@@ -5,7 +5,7 @@
 <%@page import="javax.naming.Context"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="ch08.dto.FileDTO"%>
+<%@page import="ch07.dto.FileDTO"%>
 <%@page import="java.util.List"%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%

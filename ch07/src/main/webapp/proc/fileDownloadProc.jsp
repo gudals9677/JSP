@@ -4,7 +4,7 @@
 <%@page import="java.io.File"%>
 <%@page import="java.net.URLEncoder"%>
 <%@page import="java.sql.Connection"%>
-<%@page import="ch08.dto.FileDTO"%>
+<%@page import="ch07.dto.FileDTO"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="javax.sql.DataSource"%>
