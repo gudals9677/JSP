@@ -8,7 +8,8 @@ public class UserDTO {
 	private String nick;
 	private String email;
 	private String hp;
-	private String role;
+	private String role; 
+	private String zip; 
 	private String addr1;
 	private String addr2;
 	private String regip;
@@ -57,6 +58,12 @@ public class UserDTO {
 	public void setRole(String role) {
 		this.role = role;
 	}
+	public String getZip() {
+		return zip;
+	}
+	public void setZip(String zip) {
+		this.zip = zip;
+	}
 	public String getAddr1() {
 		return addr1;
 	}
@@ -96,8 +103,9 @@ public class UserDTO {
 	@Override
 	public String toString() {
 		return "UserDTO [uid=" + uid + ", pass=" + pass + ", name=" + name + ", nick=" + nick + ", email=" + email
-				+ ", hp=" + hp + ", role=" + role + ", addr1=" + addr1 + ", addr2=" + addr2 + ", regip=" + regip
-				+ ", sms=" + sms + ", rdate=" + rdate + ", leaveDate=" + leaveDate + "]";
+				+ ", hp=" + hp + ", role=" + role + ", zip=" + zip + ", addr1=" + addr1 + ", addr2=" + addr2
+				+ ", regip=" + regip + ", sms=" + sms + ", rdate=" + rdate + ", leaveDate=" + leaveDate + "]";
 	}
+	
 	
 }

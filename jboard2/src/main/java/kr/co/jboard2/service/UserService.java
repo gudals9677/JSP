@@ -106,6 +106,10 @@ public class UserService {
 			// 실패
 			return 0;
 		}		
+		
+	}
+	public UserDTO selectUserLogin(String uid, String pass) {
+		return dao.selectUserLogin(uid, pass);
 	}
 	
 	
