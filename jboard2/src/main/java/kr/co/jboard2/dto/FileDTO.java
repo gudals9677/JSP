@@ -1,7 +1,5 @@
 package kr.co.jboard2.dto;
 
-import java.util.List;
-
 public class FileDTO {
 	
 	private int fno;
@@ -10,16 +8,6 @@ public class FileDTO {
 	private String sName;
 	private int download;
 	private String rdate;
-	
-	//추가 필드
-	private List<FileDTO> fileDTOs;
-	
-	public List<FileDTO> getFileDTOs() {
-		return fileDTOs;
-	}
-	public void setFileDTOs(List<FileDTO> fileDTOs) {
-		this.fileDTOs = fileDTOs;
-	}
 	public int getFno() {
 		return fno;
 	}
@@ -56,13 +44,10 @@ public class FileDTO {
 	public void setRdate(String rdate) {
 		this.rdate = rdate;
 	}
+	
 	@Override
 	public String toString() {
 		return "FileDTO [fno=" + fno + ", ano=" + ano + ", oName=" + oName + ", sName=" + sName + ", download="
-				+ download + ", rdate=" + rdate + ", fileDTOs=" + fileDTOs + "]";
+				+ download + ", rdate=" + rdate + "]";
 	}
-
-	
-	
-	
 }

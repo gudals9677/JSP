@@ -21,20 +21,21 @@ import kr.co.jboard2.service.FileService;
 @WebServlet("/write.do")
 public class WriteController extends HttpServlet {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -1583953554011146813L;
+	
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	private ArticleService articleService = ArticleService.getInstance();
 	private FileService fileService = FileService.getInstance();
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Override
 	public void init() throws ServletException {
-
+		
 	}
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		RequestDispatcher dispatcher= req.getRequestDispatcher("/write.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/write.jsp");
 		dispatcher.forward(req, resp);
 	}
 	
@@ -42,43 +43,30 @@ public class WriteController extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		/*
 		// Multipart/form-data는 getParameter 수신 안됨
-		String title = req.getParameter("title");
+		String title   = req.getParameter("title");
 		String content = req.getParameter("content");
-		String Writer = req.getParameter("writer");
-		String regip = req.getRemoteAddr();
-		* 
+		String writer  = req.getParameter("writer");
 		*/
-		String regip = req.getRemoteAddr();
-		//파일 업로드
+		String regip   = req.getRemoteAddr();
+		
+		// 파일 업로드
 		ArticleDTO articleDTO = articleService.fileUpload(req);
-		articleDTO.setRegip(regip);
+		articleDTO.setRegip(regip);		
+		logger.debug(""+articleDTO);
 		
-		
-		/*
-		ArticleDTO articleDTO = new ArticleDTO();
-		articleDTO.setTitle(title);
-		articleDTO.setContent(content);
-		articleDTO.setWriter(Writer);
-		articleDTO.setRegip(regip);
-		*/
-		
-		logger.debug(""+ articleDTO);
-		
-		//글등록
+		// 글 등록
 		int pk = articleService.insertArticle(articleDTO);
 		
-		//파일등록
+		// 파일 등록
 		List<FileDTO> files = articleDTO.getFileDTOs();
 		
 		for(FileDTO fileDTO : files) {
 			fileDTO.setAno(pk);
+			logger.debug(""+fileDTO);
+			
 			fileService.insertFile(fileDTO);
 		}
 		
-		fileService.insertFile(null);
-		
 		resp.sendRedirect("/jboard2/list.do");
-		
-		
 	}
 }

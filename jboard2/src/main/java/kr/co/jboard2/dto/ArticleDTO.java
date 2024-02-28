@@ -3,7 +3,7 @@ package kr.co.jboard2.dto;
 import java.util.List;
 
 public class ArticleDTO {
-	
+
 	private int no;
 	private int parent;
 	private int comment;
@@ -16,11 +16,16 @@ public class ArticleDTO {
 	private String regip;
 	private String rdate;
 	
+	// 추가필드
+	private List<FileDTO> fileDTOs;
 	private String nick;
 	
-	private List<FileDTO> fileDTOs;
-	
-	
+	public String getNick() {
+		return nick;
+	}
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
 	
 	public List<FileDTO> getFileDTOs() {
 		return fileDTOs;
@@ -28,12 +33,7 @@ public class ArticleDTO {
 	public void setFileDTOs(List<FileDTO> fileDTOs) {
 		this.fileDTOs = fileDTOs;
 	}
-	public String getNick() {
-		return nick;
-	}
-	public void setNick(String nick) {
-		this.nick = nick;
-	}
+	
 	public int getNo() {
 		return no;
 	}
@@ -48,9 +48,6 @@ public class ArticleDTO {
 	}
 	public void setParent(int parent) {
 		this.parent = parent;
-	}
-	public void setParent(String parent) {
-		this.parent = Integer.parseInt(parent);
 	}
 	public int getComment() {
 		return comment;
@@ -103,21 +100,14 @@ public class ArticleDTO {
 	public String getRdate() {
 		return rdate;
 	}
-
 	public void setRdate(String rdate) {
 		this.rdate = rdate;
 	}
+	
 	@Override
 	public String toString() {
 		return "ArticleDTO [no=" + no + ", parent=" + parent + ", comment=" + comment + ", cate=" + cate + ", title="
 				+ title + ", content=" + content + ", file=" + file + ", hit=" + hit + ", writer=" + writer + ", regip="
 				+ regip + ", rdate=" + rdate + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
 }
