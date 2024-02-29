@@ -37,7 +37,7 @@ public class FileDeleteController extends HttpServlet {
 		String fno = req.getParameter("fno");
 		
 		// 파일 삭제 후 해당 파일 글번호 반환
-		int ano = service.deleteFile(fno);
+		int ano = service.deleteFile(req, fno);
 		
 		// 해당 글의 file 컬럼 값을 -1 카운팅
 		articleService.updateArticleForFileCount(ano);
